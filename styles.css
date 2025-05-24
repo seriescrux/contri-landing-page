@@ -1,0 +1,450 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Mabry Pro';
+    src: url('assets/fonts/MabryPro-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mabry Pro';
+    src: url('assets/fonts/MabryPro-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    background-color: #1C1C1C;
+    color: #FFFFFF;
+    font-family: 'Mabry Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Container styles */
+main {
+    width: 100%;
+    max-width: 1440px;
+    min-height: 900px;
+    padding: 0;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Logo styling */
+.logo {
+    position: absolute;
+    left: 50%;
+    top: 72px;
+    transform: translateX(-50%);
+    line-height: 0;
+    width: 104.18px;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+}
+
+/* Content styling */
+.content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.headline-wrapper {
+    margin-top: 311px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.headlines {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.headline {
+    font-size: 62.58px;
+    line-height: 0.9;
+    font-weight: bold;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 0;
+}
+
+/* Gradient text effect */
+.gradient-text {
+    background: linear-gradient(144deg, #CFFF5E 35%, #FFFFFF 48%, #8C7DFF 60%, #B87EED 63%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #FFFFFF; /* Fallback */
+}
+
+/* Emoji positioning */
+.emoji {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: clamp(26px, calc(26px + (55.71 - 26) * ((100vw - 400px) / (1440 - 400))), 55.71px);
+    height: clamp(26px, calc(26px + (55.71 - 26) * ((100vw - 400px) / (1440 - 400))), 55.71px);
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.left-emoji {
+    /* Horizontal position scales from 448.47px to 72px */
+    left: clamp(72px, calc(72px + (448.47 - 72) * ((100vw - 400px) / (1440 - 400))), 448.47px);
+    /* Position higher above "something" text with minimal movement */
+    top: clamp(318px, calc(318px + (100vw - 400px) * 0.005), 323px);
+    transform: rotate(-7.46deg);
+    transform-origin: center center;
+}
+
+.right-emoji {
+    /* Horizontal position scales from 948.49px to 306px */
+    left: clamp(306px, calc(306px + (948.49 - 306) * ((100vw - 400px) / (1440 - 400))), 948.49px);
+    /* Align with "money" text */
+    top: clamp(428.3px, calc(444.09px - (100vw - 400px) * 0.05), 444.09px);
+}
+
+/* Waitlist text */
+.waitlist {
+    position: relative;
+    margin-top: 120px;
+    width: 100%;
+    max-width: 760.77px;
+    font-family: 'Mabry Pro';
+    font-weight: 400;
+    font-size: 31.29px;
+    line-height: 1;
+    text-align: center;
+    color: #F7F7F7;
+    padding: 0 20px;
+}
+
+/* Media queries */
+@media (max-width: 1440px) {
+    .logo {
+        left: 668px;
+        transform: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .headline {
+        font-size: 52px;
+        gap: 12px;
+    }
+
+    .waitlist {
+        font-size: 28px;
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .headline {
+        font-size: 42px;
+        gap: 10px;
+    }
+
+    .waitlist {
+        font-size: 24px;
+        margin-top: 80px;
+    }
+
+    .headline-wrapper {
+        margin-top: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        min-height: 956px;
+    }
+
+    .logo {
+        left: 185px;
+        transform: none;
+        width: 69.45px;
+        height: 19px;
+    }
+
+    .headline-wrapper {
+        margin-top: 0;
+        position: absolute;
+        left: 50%;
+        top: 389px;
+        width: 251px;
+        height: 96px;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    .headline {
+        font-size: 32px;
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .waitlist {
+        position: absolute;
+        left: 26px;
+        top: 530px;
+        width: 389px;
+        height: 16px;
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .logo {
+        left: 165px;
+        width: 63px;
+        height: 17.3px;
+    }
+
+    .headline-wrapper {
+        width: 228px;
+    }
+
+    .headline {
+        font-size: 29px;
+        gap: 7px;
+    }
+
+    .waitlist {
+        left: 20px;
+        width: 360px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 440px) {
+    .left-emoji {
+        top: 393.61px;
+        left: 82.8px;
+    }
+
+    .right-emoji {
+        top: 451.09px;
+        left: 337.14px;
+    }
+}
+
+@media (max-width: 375px) {
+    .logo {
+        left: 153px;
+        width: 60px;
+        height: 16.5px;
+    }
+
+    .headline-wrapper {
+        width: 215px;
+    }
+
+    .headline {
+        font-size: 27px;
+        gap: 6px;
+    }
+
+    .waitlist {
+        left: 18px;
+        width: 340px;
+        font-size: 14px;
+    }
+
+    .left-emoji {
+        top: 393.61px;
+        left: 70px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .right-emoji {
+        top: 441.09px;
+        left: 285px;
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 360px) {
+    .logo {
+        left: 146px;
+        width: 58px;
+        height: 16px;
+    }
+
+    .headline-wrapper {
+        width: 208px;
+    }
+
+    .headline {
+        font-size: 26px;
+        gap: 5px;
+    }
+
+    .waitlist {
+        left: 15px;
+        width: 330px;
+        font-size: 13px;
+    }
+
+    .left-emoji {
+        top: 393.61px;
+        left: 70px;
+        width: 22px;
+        height: 22px;
+    }
+
+    .right-emoji {
+        top: 438.09px;
+        left: 272px;
+        width: 22px;
+        height: 22px;
+    }
+}
+
+/* New larger mobile breakpoint */
+@media (max-width: 420px) {
+    .logo {
+        left: 175px;
+        width: 65px;
+        height: 17.8px;
+    }
+
+    .headline-wrapper {
+        width: 235px;
+    }
+
+    .headline {
+        font-size: 30px;
+        gap: 7px;
+    }
+
+    .waitlist {
+        left: 22px;
+        width: 375px;
+        font-size: 15px;
+    }
+
+    .left-emoji {
+        top: 393.61px;
+        left: 78px;  /* Proportionally between 440px and 375px sizes */
+        width: 26px;
+        height: 26px;
+    }
+
+    .right-emoji {
+        top: 447px;  /* Proportionally between 451.09px and 441.09px */
+        left: 315px; /* Proportionally between 337.14px and 285px */
+        width: 26px;
+        height: 26px;
+    }
+}
+
+/* New smaller mobile breakpoint */
+@media (max-width: 340px) {
+    .logo {
+        left: 138px;
+        width: 55px;
+        height: 15px;
+    }
+
+    .headline-wrapper {
+        width: 195px;
+    }
+
+    .headline {
+        font-size: 24px;
+        gap: 4px;
+    }
+
+    .waitlist {
+        left: 12px;
+        width: 315px;
+        font-size: 12px;
+    }
+
+    .left-emoji {
+        top: 393.61px;
+        left: 65px;  /* Slightly adjusted from 360px size */
+        width: 20px;
+        height: 20px;
+    }
+
+    .right-emoji {
+        top: 435px;  /* Proportionally reduced from 360px */
+        left: 260px; /* Proportionally reduced from 360px */
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 320px) {
+    .logo {
+        left: 130px;
+        width: 52px;
+        height: 14px;
+    }
+
+    .headline-wrapper {
+        width: 185px;
+    }
+
+    .headline {
+        font-size: 22px;
+        gap: 3px;
+    }
+
+    .waitlist {
+        left: 10px;
+        width: 300px;
+        font-size: 11px;
+    }
+
+    .left-emoji {
+        top: 393.61px;
+        left: 60px;
+        width: 18px;
+        height: 18px;
+    }
+
+    .right-emoji {
+        top: 432px;
+        left: 250px;
+        width: 18px;
+        height: 18px;
+    }
+} 
